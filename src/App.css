@@ -12,3 +12,8 @@
   font-size: clamp(1.8rem, 2vw, 3rem);
   margin-top: 30px;
 }
+
+/* .movies {
+  height: 100vh;
+  background: url('./srcImages/main-background.jpg')center center/cover no-repeat;
+} */
