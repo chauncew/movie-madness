@@ -1,0 +1,17 @@
+{
+  "files": {
+    "main.css": "/movie-madness/static/css/main.6ed792f3.css",
+    "main.js": "/movie-madness/static/js/main.e1e55e9e.js",
+    "static/media/info-background.jpg": "/movie-madness/static/media/info-background.5dc9e5525d13e1d5d622.jpg",
+    "static/media/header-img.jpg": "/movie-madness/static/media/header-img.e04954c4f62d25b6150a.jpg",
+    "static/media/movie-reel.png": "/movie-madness/static/media/movie-reel.8e5d65999f8899b28fbf.png",
+    "static/media/clapper.png": "/movie-madness/static/media/clapper.d1f9080c37f6ddb4b4cc.png",
+    "index.html": "/movie-madness/index.html",
+    "main.6ed792f3.css.map": "/movie-madness/static/css/main.6ed792f3.css.map",
+    "main.e1e55e9e.js.map": "/movie-madness/static/js/main.e1e55e9e.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.6ed792f3.css",
+    "static/js/main.e1e55e9e.js"
+  ]
+}
