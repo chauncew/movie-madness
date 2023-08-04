@@ -3,6 +3,96 @@
   margin: 0;
   box-sizing: border-box;
   font-family: sans-serif;
+  scrollbar-color: green;
+}
+
+html {
+  background: url('./srcImages/header-img.jpg')center center/cover no-repeat;
+  /* height: 100%; */
+  overflow-x: hidden;
+  ::-webkit-scrollbar {
+    background: rgb(106, 240, 240); 
+    height: 5%;
+  }  
+    ::-webkit-scrollbar-thumb {
+    background: teal; 
+    height: 5%;
+  } 
+}
+
+body {
+  position: relative;
+  background-position: 2% 2%;
+}
+
+.App {
+  height: 100vh;
+}
+
+.loading {
+  color: #fff;
+  font-size: clamp(1.8rem, 2vw, 3rem);
+  text-align: center;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  z-index: 50;
+  visibility: hidden;
+}
+
+.loading h1 {
+  font-family: 'Bungee Shade', sans-serif;
+}
+
+.not-found {
+  color: #fff;
+  font-size: clamp(1.8rem, 2vw, 3rem);
+  letter-spacing: 1.3px;
+  text-align: center;
+  padding: 0 5px;
+}
+
+.clapper-image {
+  position: absolute;
+  top: 40%;
+  left: 50%;
+  transform: translate(-50%, -40%);
+  z-index: 20;
+}
+
+.clapper-image img {
+  height: 500px;
+  width: 500px;
+  transform: rotate(-20deg);
+  z-index: 20;
+  border-radius: 10px;
+}
+
+.clapper-image h2 {
+  font-size: 8rem;
+  transform: rotate(-20deg);
+  margin-left: 180px;
+  color: #fff;
+}
+
+.movie-reel img {
+  height: 150px;
+  width: 150px;
+}
+
+.movie-reel1 {
+  position: absolute;
+  top: 40%;
+  left: 3%;
+  animation: rotate 2s infinite linear;
+}
+
+.movie-reel2 {
+  position: absolute;
+  top: 40%;
+  right: 3%;
+  animation: rotate 2s infinite linear;
 }
 
 .main-heading {
@@ -10,10 +100,281 @@
   font-weight: 100;
   text-align: center;
   font-size: clamp(1.8rem, 2vw, 3rem);
-  margin-top: 30px;
+  margin-top: 50px;
+  color: rgb(109, 232, 232);
 }
 
-/* .movies {
-  height: 100vh;
-  background: url('./srcImages/main-background.jpg')center center/cover no-repeat;
-} */
+.movies {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  background: url('./srcImages/header-img.jpg')center center/cover no-repeat;
+  background-position: 38% 38%;
+  padding: 50px 10% 0 10%;  
+  margin: 0 auto;
+  gap: 20px;
+}
+
+.search-nav form {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  margin: 50px 0;
+  border: none;
+}
+
+.search-nav form input {
+  font-size: clamp(1.5rem, 1.8vw, 2rem );
+  padding-left: 15px;
+  border-radius: 5px 0 0 5px;
+  outline: none;
+  border: none;
+  color: rgb(5, 138, 138);
+}
+
+form input::placeholder {
+  padding-left: 15px;
+  color: rgb(5, 138, 138);
+}
+
+form button {
+  font-size: clamp(1.5rem, 1.8vw, 2rem );
+  margin-left: 5px;
+  border-radius: 0 5px  5px 0;
+  padding: 5px 10px;
+  border: none;
+  color: rgb(5, 138, 138);
+  transition: 0.2s;
+  cursor: pointer;
+}
+
+form button:active {
+  transform: scale(0.9);
+}
+
+.cards {
+  background: #000;
+  border-radius: 5px;
+}
+
+.card:hover .overview{
+  transform: translateY(0%);
+}
+
+.card {
+  position: relative;
+  height: 485px;
+  width: 300px;
+  object-fit: cover;
+  margin-bottom: 80px;
+  background: #000;
+  color: rgb(109, 232, 232);
+  border-radius: 5px;
+  overflow: hidden;
+  animation: bounce 1.3s 6.2s ease-out;
+  animation-fill-mode: both;
+    ::-webkit-scrollbar {
+    background: rgb(106, 240, 240); 
+    height: 5%;
+  }  
+    ::-webkit-scrollbar-thumb {
+    background: teal; 
+    height: 5%;
+  }  
+}
+
+.card:hover img {
+  transform: scale(1.9) rotate(12deg);
+}
+
+.card img {
+  height: 400px;
+  width: 100%;
+  object-fit: cover;
+  transition: 0.5s;
+}
+
+.info {
+  display: flex; 
+  justify-content: space-between;
+  border-radius: 0 0 5px 5px;
+  padding: 5px;
+}
+
+.info .title {
+  width: 50%;
+}
+
+.overview {
+  position: absolute;
+  top: 0;
+  left: 0;
+  transform: translateY(100%);
+  transition: all 0.8s;
+  height: 100%;
+  padding: 5px 10px;
+  background: url('./srcImages/info-background.jpg')center center/cover no-repeat;
+  line-height: 1.5;
+  letter-spacing: 1.2px;
+  overflow: auto;
+  scrollbar-color: green;
+}
+
+.title-overview {
+  text-align: center;
+  border-bottom: 2px solid #fff;
+  margin-bottom: 15px;
+  padding-bottom: 10px;
+}
+
+/* Keyframe Animations */
+@keyframes rotate {
+  from {
+    transform: rotateZ(0deg)
+  }
+  to {
+    transform: rotateZ(360deg)
+  }
+}
+
+@keyframes bounce {
+  0% {
+    opacity: 0;
+    transform: scale(0)
+  }
+  40% {
+    transform: scale(1.1)
+  }
+  50% {
+    transform: scale(0.9)
+  }
+  60% {
+    height: 485px;
+    opacity: 1;
+    transform: scale(1.05)
+  }
+  70% {
+    transform: scale(0.95)
+  }
+  80% {
+    transform: scale(1.02)
+  }
+  90% {
+    transform: scale(0.98)
+  }
+  100% {
+    height: 485px;
+    opacity: 1;
+    transform: scale(1)
+  }
+}
+
+/* Media Queries */
+@media(max-width: 408px) {
+  form button {
+    margin-top: 10px;
+  }
+}
+
+/* Reels Queries */
+@media(max-width: 2055px) {
+  .movie-reel1 {
+    top: 4%;
+  }
+  .movie-reel2 {
+    top: 4%;
+  }
+}
+
+@media(max-width: 1575px) {
+  .movie-reel1 {
+    top: 40%;
+  }
+  .movie-reel2 {
+    top: 40%;
+  }
+}
+@media(max-width: 1340px) {
+  .movie-reel1 {
+    top: 4%;
+  }
+  .movie-reel2 {
+    top: 4%;
+  }
+}
+
+@media(max-width: 1175px) {
+  .movie-reel1 {
+    top: 40%;
+  }
+  .movie-reel2 {
+    top: 40%;
+  }
+}
+
+@media(max-width: 1000px) {
+  .movie-reel1 {
+    top: 4%;
+  }
+  .movie-reel2 {
+    top: 4%;
+  }
+}
+
+@media(max-width: 773px) {
+  .movie-reel1 {
+    top: 40%;
+  }
+  .movie-reel2 {
+    top: 40%;
+  }
+}
+
+@media(max-width: 660px) {
+  .movie-reel1 {
+    display: none;
+  }
+  .movie-reel2 {
+    display: none;
+  }
+}
+
+/* Clapper Queries */
+@media(max-width: 850px) {
+  .clapper-image img {
+    height: 400px;
+    width: 400px;
+  }
+  .clapper-image h2 {
+    font-size: 8rem;
+    transform: rotate(-20deg);
+    margin-left: 130px;
+    color: #fff;
+  }
+}
+
+@media(max-width: 710px) {
+  .clapper-image img {
+    height: 200px;
+    width: 200px;
+  }
+  .clapper-image h2 {
+    font-size: 3rem;
+    transform: rotate(-20deg);
+    margin-left: 85px;
+    color: #fff;
+  }
+}
+
+@media(max-width: 370px) {
+  .clapper-image img {
+    height: 150px;
+    width: 150px;
+  }
+  .clapper-image h2 {
+    font-size: 2rem;
+    transform: rotate(-20deg);
+    margin-left: 60px;
+    color: #fff;
+  }
+}
